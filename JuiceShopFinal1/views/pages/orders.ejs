@@ -1,0 +1,68 @@
+<head>
+    <%- include("../shared/head") %>
+</head>
+
+<body>
+    <div class="container">
+        <h1>All Orders</h1>
+        <div class="d-flex">
+            <p>
+              |<%= username %> 
+            </p>
+           | <a class="link-primary" href="/">Order a Juice</a> 
+            
+           | <a class="link-primary" href="/logout">Logout</a> |
+        </div>
+
+        <% if (typeof receipt !=="undefined" ) { %>
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Customer Name</th>
+                        <th scope="col">Customer Phone</th>
+                        <th scope="col">Orange Juice</th>
+                        <th scope="col">Berry Juice</th>
+                        <th scope="col">Apple Juice</th>
+                        <th scope="col">Sub Total</th>
+                        <th scope="col">Tax</th>
+                        <th scope="col">Total</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% receipt.forEach(receipt=> { %>
+                        <tr>
+                            <td>
+                                <%= receipt.fullname %>
+                            </td>
+                            <td>
+                                <%= receipt.phone %>
+                            </td>
+                            <td>
+                                <%= receipt.qpro1 %>
+                            </td>
+                            <td>
+                                <%= receipt.qpro2 %>
+                            </td>
+                            <td>
+                                <%= receipt.qpro3 %>
+                            </td>
+                            <td>
+                                <%= receipt.subtotal %>
+                            </td>
+                            <td>
+                                <%= receipt.tax %>
+                            </td>
+                            <td>$<%= receipt.total %>
+                            </td>
+                        </tr>
+                        <% }) %>
+                </tbody>
+            </table>
+
+            <% } %>
+
+
+                <%- include("../shared/footer") %>
+    </div>
+    <%- include("../shared/scripts") %>
+</body>

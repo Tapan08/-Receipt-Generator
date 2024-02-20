@@ -1,0 +1,68 @@
+<head>
+    <%- include("../shared/head") %>
+</head>
+<body>
+    <div class="container">
+        <h1>Order Juice</h1>
+        <div class="d-flex">
+           | <a class="link-primary" href="/login">Login</a>           
+           | <a class="link-primary" href="/orders">View Orders</a> |
+        </div>
+
+        <!-- Form Errors -->
+
+        <% if (typeof errors !=="undefined" ) { for (let error of errors){%>
+
+            <div class="alert alert-danger alert-dismissible" role="alert">
+                <div>
+                    <%= error.msg %>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+            </div>
+
+            <% } } %>
+
+
+
+        <!-- Order Form -->
+        <form method="post" action="/">
+
+            <div class="mb-3">
+                <label class="form-label" for="fullname">Name</label>
+                <input class="form-control" type="text" name="fullname" />
+
+            </div>           
+
+            <div class="mb-3">
+                <label class="form-label" for="phone">Phone</label>
+                <input class="form-control" type="text" name="phone" />
+
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="qproduct1">Apple Juice($10)</label>
+                <input class="form-control" type="text" name="qproduct1" />
+
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="qproduct2">Berry Juice($10)</label>
+                <input class="form-control" type="text" name="qproduct2" />
+
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label" for="qproduct3">Orange Juice($10)</label>
+                <input class="form-control" type="text" name="qproduct3" />
+
+            </div>
+
+
+            <button type="submit" class="btn btn-primary">Order 🛒</button>
+
+        </form>
+
+        <%- include("../shared/footer") %>
+    </div>
+    <%- include("../shared/scripts") %>
+</body>

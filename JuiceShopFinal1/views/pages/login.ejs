@@ -1,0 +1,48 @@
+<head>
+    <%- include("../shared/head") %>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Login</h1>
+
+        <head>
+            <%- include('../shared/head') %>
+                <link rel="stylesheet" href="css/login.css" />
+        </head>
+
+
+        <!-- Login Message -->
+        
+        <% if (typeof message !=="undefined" ) { %>
+            <div class="alert alert-danger alert-dismissible" role="alert">
+                <div>
+                    <%= message %>
+                </div>
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            <% } %>
+
+                <!-- Login Form -->
+
+                <form method="post" action="/login">
+                    <div class="mb-3">
+                        <label class="form-label" for="username">Username</label>
+                        <input class="form-control" type="text" name="username" />
+                    </div>
+
+                    <div class="mb-3">
+                        <label class="form-label" for="password">Password</label>
+                        <input class="form-control" type="password" name="password" />
+                    </div>
+
+                    <input class="btn btn-primary" type="submit" value="Login">
+
+
+
+                </form>
+
+                <%- include("../shared/footer") %>
+    </div>
+    <%- include("../shared/scripts") %>
+</body>

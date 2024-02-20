@@ -1,0 +1,118 @@
+<head>
+    <%- include("../shared/head") %>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Receipt</h1>
+        <div class="d-flex">
+           | <a class="link-primary" href="/">Order a Juice</a> |
+            <br>
+            <br>
+           <a class="link-primary" href="/login">View Orders</a> |
+        </div>
+
+        <h3> Thank you for your Order</h3>
+        <br>
+        <h3> Here is your order details:</h3>
+        <br>
+
+        <!-- Receipt Table -->
+
+        <table class="table">
+            <thead>
+
+                <tr>
+                    <th scope="col">Customer Name</th>
+                    <td>
+                    <td>
+                        <%= name %>
+                    </td>
+                    </td>
+                </tr>
+
+
+                <tr>
+
+                    <th scope="col">Phone</th>
+                    <td>
+                    <td>
+                        <%= phone %>
+                    </td>
+                    </td>
+
+                </tr>
+
+
+                <tr>
+                    <th scope="col">Orange Juice($2.99) x<%= qpro1 %>
+                    </th>
+                    <td>
+                    <td>
+                        <%= product1total.toFixed(2) %>
+                    </td>
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <th scope="col">Berry Juice($1.99) x<%= qpro2 %>
+                    </th>
+                    <td>
+                    <td>
+                        <%= product2total.toFixed(2) %>
+                    </td>
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <th scope="col">Apple Juice($2.49) x<%= qpro3 %>
+                    </th>
+                    <td>
+                    <td>
+                        <%= product3total.toFixed(2) %>
+                    </td>
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <th scope="col">SubTotal</th>
+                    <td>
+                    <td>
+                        <%= subtotal.toFixed(2) %>
+                    </td>
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <th scope="col">Tax</th>
+                    <td>
+                    <td>
+                        <%= tax.toFixed(2) %>
+                    </td>
+                    </td>
+
+                </tr>
+
+                <tr>
+                    <th scope="col">Total</th>
+                    <td>
+                    <td>
+                        <%= total.toFixed(2) %>
+                    </td>
+                    </td>
+
+                </tr>
+                </tr>
+            </thead>
+
+        </table>
+
+
+        <%- include("../shared/footer") %>
+    </div>
+    <%- include("../shared/scripts") %>
+</body>
